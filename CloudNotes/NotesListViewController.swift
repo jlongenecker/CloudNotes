@@ -25,10 +25,16 @@ import CoreData
 
 class NotesListViewController: UITableViewController, NSFetchedResultsControllerDelegate {
   lazy var stack : CoreDataStack = {
-    let manager = DataMigrationManager(
-      storeNamed: "CloudNotes",
-      modelNamed: "CloudNotesDataModel")
-    return manager.stack
+    let options = [NSPersistentStoreUbiquitousContentNameKey: "CloudNotes",
+                   NSMigratePersistentStoresAutomaticallyOption: true,
+                   NSInferMappingModelAutomaticallyOption: true]
+    
+    return CoreDataStack(modelName: "CloudNotesDataModel", storeName: "CloudNotes", options: options)
+//    
+//    let manager = DataMigrationManager(
+//      storeNamed: "CloudNotes",
+//      modelNamed: "CloudNotesDataModel")
+//    return manager.stack
   }()
   
   lazy var notes : NSFetchedResultsController = {
