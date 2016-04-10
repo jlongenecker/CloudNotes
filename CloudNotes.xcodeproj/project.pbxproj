@@ -26,7 +26,7 @@
 		C7BBD86D194FFCDF00BDDB95 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7BBD86C194FFCDF00BDDB95 /* Note.swift */; };
 		C7F78B8F194E1D5A00BAF550 /* NoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F78B8E194E1D5A00BAF550 /* NoteDetailViewController.swift */; };
 		C7F78B91194E1F1300BAF550 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F78B90194E1F1300BAF550 /* NoteTableViewCell.swift */; };
-		D58F9EC91CB9D0D0002EEB65 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D58F9EC81CB9D0D0002EEB65 /* CloudKit.framework */; };
+		D59A33711CBAA3FC00881DEB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59A33701CBAA3FC00881DEB /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,7 +56,7 @@
 		C7F78B8E194E1D5A00BAF550 /* NoteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteDetailViewController.swift; sourceTree = "<group>"; };
 		C7F78B90194E1F1300BAF550 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = NoteTableViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		D58F9EC71CB9D0B6002EEB65 /* CloudNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = CloudNotes.entitlements; sourceTree = "<group>"; };
-		D58F9EC81CB9D0D0002EEB65 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D59A33701CBAA3FC00881DEB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D58F9EC91CB9D0D0002EEB65 /* CloudKit.framework in Frameworks */,
+				D59A33711CBAA3FC00881DEB /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +74,7 @@
 		C77E1E6E1947D6D700762492 = {
 			isa = PBXGroup;
 			children = (
-				D58F9EC81CB9D0D0002EEB65 /* CloudKit.framework */,
+				D59A33701CBAA3FC00881DEB /* CloudKit.framework */,
 				C77E1E791947D6D700762492 /* CloudNotes */,
 				C77E1E781947D6D700762492 /* Products */,
 			);
@@ -279,6 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				METAL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -315,6 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				METAL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
