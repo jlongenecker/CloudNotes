@@ -84,4 +84,26 @@ class CoreDataStack: CustomStringConvertible {
     context.persistentStoreCoordinator = self.coordinator
     return context
   }()
+    
+    var updateContextWithUbiquitousContentUpdates: Bool = false {
+        willSet {
+            ubiquitousChangesObserver = newValue ?
+            NSNotificationCenter.defaultCenter() : nil
+        }
+    }
+    
+    private var ubiquitousChangesObserver: NSNotificationCenter? {
+        didSet {
+            oldValue?.removeObserver(self, name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: coordinator)
+            ubiquitousChangesObserver?.addObserver(self, selector: #selector(CoreDataStack.persistentStoreDidImportUbiquitousContentChanges(_:)), name: NSPersistentStoreDidImportUbiquitousContentChangesNotification, object: coordinator)
+        }
+    }
+    
+    @objc func persistentStoreDidImportUbiquitousContentChanges(notification: NSNotification) {
+        NSLog("Merging ubiquitous content changes")
+        context.performBlock {
+            self.context.mergeChangesFromContextDidSaveNotification(notification)
+        }
+    }
+    
 }
